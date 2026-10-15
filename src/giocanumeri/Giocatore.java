@@ -1,14 +1,12 @@
 package giocanumeri;
 
 /**
- * La classe Giocatore estende Thread per gestire il gioco dei numeri in modalità concorrente.
- * Permette di elaborare una parola inserita dall'utente, eseguire un ciclo di conteggio,
- * calcolare un punteggio e gestire eventuali errori a runtime.
+ * La classe Giocatore implementa Runnable
  *
  * @author Riccardo Sagrazzini
- * @version 1.0
+ * @version 0.0.2
  */
-public class Giocatore extends Thread {
+public class Giocatore implements Runnable {
     private String nome;
     private String parola;
     private int punteggio;

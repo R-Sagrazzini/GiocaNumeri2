@@ -1,6 +1,6 @@
 # GiocaNumeri2 (Multithreading in Java)
 
-Progetto che estende il progetto precedente [GiocaNumeri](https://github.com/R-Sagrazzini/GiocaNumeri) 
+Progetto che estende il progetto precedente [GiocaNumeri](https://github.com/R-Sagrazzini/GiocaNumeri)
 
 ## Autore
 

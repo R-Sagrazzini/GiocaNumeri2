@@ -7,7 +7,7 @@ import java.util.Scanner;
  * la creazione dei thread e la loro sincronizzazione tramite join() e sleep().
  *
  * @author Riccardo Sagrazzini
- * @version 1.0
+ * @version 0.0.2
  */
 public class GiocaNumeri {
 
@@ -50,8 +50,12 @@ public class GiocaNumeri {
         g1.setParola(parola);
         g2.setParola(parola);
 
-        // Avvio del primo thread (g1)
-        g1.start();
+        // Creo i thread dei giocatori
+        Thread Tg1 = new Thread(g1);
+        Thread Tg2 = new Thread(g2);
+
+        //Avvio del primo thread (Tg1)
+        Tg1.start();
 
         // sospensione di 5 secondi dopo l'avvio del primo thread
         try {
@@ -61,15 +65,15 @@ public class GiocaNumeri {
             System.err.println("[Errore] Errore durante la sospensione: " + e.getMessage());
         }
 
-        // Avvio del secondo thread (g2)
-        g2.start();
+        // Avvio del secondo thread (Tg2)
+        Tg2.start();
 
-        //uso di join() per la logica: g1 e g2 in parallelo
+        //uso di join() per la logica: Tg1 e Tg2 in parallelo
         try {
-            System.out.println("In attesa del completamento dei thread g1 e g2...");
-            g1.join();
-            g2.join();
-            //uso join e non start perchè il programma andrebbe avanti prima che i thread g1 e g2 terminino la loro esecuzione
+            System.out.println("In attesa del completamento dei thread Tg1 e Tg2...");
+            Tg1.join();
+            Tg2.join();
+            //uso join e non start perchè il programma andrebbe avanti prima che i thread Tg1 e Tg2 terminino la loro esecuzione
         } catch (InterruptedException e) {
             System.err.println("[Errore] Errore nell'attesa dei thread con join(): " + e.getMessage());
         }
@@ -78,8 +82,8 @@ public class GiocaNumeri {
         System.out.println("===== RISULTATI FINALI =====");
         System.out.println("Numero scelto: " + numero);
         System.out.println("Parola inserita: " + parola);
-        System.out.println(g1.getName() + " - Punteggio finale: " + g1.getPunteggio());
-        System.out.println(g2.getName() + " - Punteggio finale: " + g2.getPunteggio());
+        System.out.println(Tg1.getName() + " - Punteggio finale: " + g1.getPunteggio());
+        System.out.println(Tg2.getName() + " - Punteggio finale: " + g2.getPunteggio());
         System.out.println("==============================");
     }
 }

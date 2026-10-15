@@ -1,6 +1,15 @@
 # CHANGELOG
 
 ---
+### [0.0.2] - 2026-10-15
+
+**Nome commit:** Implementazione runnable
+
+- **File modificati:**
+  - `GiocaNumeri.java`
+  - `Giocatore.java`
+
+---
 ### [0.0.1] - 2026-10-15
 
 **Nome commit:** Impostazione file progetto tramite copia file progetto **___GiocaNumeri___**.
@@ -15,6 +24,6 @@
   - `Giocatore.java`
 
 
--  **File modificati:**
+- **File modificati:**
   - `CHANGELOG.md`
   - `README.md`
